@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Title </title>
+</head>
+
+<body>
+
+	<script>
+		welcome();
+
+		var name;
+		var passport;
+
+		function welcome() {
+			alert("WELCOME  To IELTS BAND Calculator");
+			getInput();
+		}
+		
+
+		function getInput() {
+			name = prompt("Enter tha Student Name");
+			Passport = prompt("Enter the Passport Name");
+			var lb = parseInt(prompt("Enter the Listening Bond"));
+			var rb = parseInt(prompt("Enter the Reading Bond"));
+			var wb = parseInt(prompt("Enter the Writing Bond"));
+			var sb = parseInt(prompt("Enter the Speaking Bond"));
+			calculate(lb, rb, wb, sb);
+		}
+
+		function calculate(lb, rb, wb, sb) {
+			var total = lb + rb + wb + sb;
+			var avg = total / 4;
+			result(lb, rb, wb, sb, avg);
+		}
+
+
+
+		function result(lb, rb, wb, sb, avg) {
+			if (lb >= 6 && rb >= 6 && wb >= 6 && sb >= 6 && avg >= 6.5) {
+				displayResult(lb, rb, wb, sb, avg, name, Passport, "pass");
+			} else {
+				displayResult(lb, rb, wb, sb, avg, name, Passport, "Fail");
+
+			}
+		}
+
+
+		function displayResult(lb, rb, wb, sb, avg, name, Passport, status) {
+			alert("Name:" + name + "\n passport:" + passport + "\n Listeing:" + lb + "\n writing:" + wb + "\n speaking:" + sb + "\n Reading:" + rb + "\n Ovaroll:" + avg + "\n Result:" + status);
+		}
+
+	</script>
+
+
+
+
+
+</body>
+
+</html>
